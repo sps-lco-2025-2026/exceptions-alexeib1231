@@ -1,11 +1,33 @@
 // Snippet A
-int[] arr = new int[3];
-arr[10] = 5;
+try
+{
+    int[] arr = new int[3];
+    arr[10] = 5;
+}
+catch(IndexOutOfRangeException)
+{
+    Console.WriteLine("Index is out of range");
+}
 
 // Snippet B
-string s = null!;
-Console.WriteLine(s.Length);
+try
+{
+    string s = null!;
+    Console.WriteLine(s.Length);
+}
+catch (NullReferenceException)
+{
+    Console.WriteLine("do not use an object that is null");
+}
 
 // Snippet C
-int x = int.MaxValue;
-checked { x = x + 1; }   // checked enforces overflow detection
+try
+{
+   int x = int.MaxValue;
+    checked { x = x + 1; }   // checked enforces overflow detection 
+}
+catch(OverflowException)
+{
+    Console.WriteLine("The result is greater than the max value of int");
+}
+
